@@ -1,0 +1,440 @@
+/* Fonts */
+@font-face {
+    font-family: 'Marhalika';
+    src: url('../fonts/Maharlika-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Montserrat';
+    src: url(../fonts/Montserrat/Montserrat-VariableFont_wght.ttf);
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* Animaciones */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+
+
+
+/*Estilos de la Página Principal*/
+/*Capa de desenfoque*/
+#blur-layer {
+    z-index: 1000;
+    /* La capa borrosa debe estar por encima del contenido */
+    transition: all 0.3s ease-in-out;
+}
+
+/* General */
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #f8f9fa;
+}
+
+p {
+    font-family: 'Montserrat', sans-serif;
+    animation: fadeIn 2s ease-in-out;
+}
+
+h1,
+h2,
+h5,
+label {
+    font-family: 'Marhalika', sans-serif;
+}
+
+
+h5 {
+    animation: fadeIn 2s ease-in-out;
+}
+
+.btn {
+    font-family: 'Marhalika', sans-serif;
+}
+
+
+/* Hero Section Styles*/
+.hero {
+    background: linear-gradient(#354F52, #52796F), url('https://source.unsplash.com/1600x900/?technology');
+    background-size: cover;
+    color: white;
+    text-align: center;
+    padding: 100px 20px;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    font-weight: bold;
+    animation: fadeIn 2s ease-in-out;
+}
+
+.hero a {
+    animation: fadeIn 2s ease-in-out;
+    background-color: #52796F;
+    border: 1px solid;
+}
+
+.hero a:hover {
+    background-color: #354F52;
+    border: 2px solid #354F52;
+}
+
+
+/* Navabar Section Styles*/
+.navbar-brand {
+    font-weight: bold;
+    font-family: 'Marhalika', sans-serif;
+}
+
+.navbar-nav .nav-link {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.9rem;
+    position: relative;
+    display: inline-block;
+    text-decoration: none;
+    overflow: hidden;
+    transition: font-size 0.3s ease, font-weight 0.3s ease;
+}
+
+.navbar-nav .nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 1px;
+    background-color: #52796F;
+    transition: width 0.3s ease, left 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover {
+    font-size: 0.8rem;
+    /* Cambio de tamaño */
+    font-weight: bold;
+    /* Cambio a negrita */
+}
+
+.navbar-nav .nav-link:hover::after {
+    width: 100%;
+    /* Línea de fondo completa */
+    left: 0;
+    /* Alinea la línea al inicio */
+}
+
+/* col-lg-6 */
+.col-lg-6 img {
+    height: 500px;
+}
+
+.col-lg-6 a {
+    animation: fadeIn 2s ease-in-out;
+    border: 2px solid #354F52;
+    background-color: white;
+    color: #354F52;
+}
+
+.col-lg-6 a:hover {
+    background-color: #354F52;
+    border: #354F52;
+}
+
+/* Footer */
+
+footer {
+    background-color: #343a40;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+}
+
+footer p {
+    font-size: 12px;
+}
+
+
+
+
+
+/*Estilos de SobreMi*/
+
+/* About Section Styles */
+.about-section {
+    padding: 60px 20px;
+    background-color: #ffffff;
+}
+
+h1 {
+    font-size: 2.5rem;
+    font-family: 'Marhalika', sans-serif;
+    animation: fadeIn 2s ease-in-out;
+}
+
+.col-md-6 h2,
+.col-md-4 h3 {
+    font-family: 'Marhalika', sans-serif;
+    animation: fadeIn 2s ease-in-out;
+}
+
+.col-md-6 img,
+.col-md-6 li {
+    animation: fadeIn 2s ease-in-out;
+}
+
+
+/* Fun-facts and Values Section Styles*/
+.fun-facts,
+.timeline,
+.values {
+    padding: 60px 20px;
+}
+
+.fun-facts h2,
+.timeline h2,
+.values h2 {
+    font-size: 2rem;
+    font-family: 'Marhalika', sans-serif;
+    animation: fadeIn 2s ease-in-out;
+}
+
+.fun-facts .row div,
+.values .row div {
+    margin-bottom: 20px;
+}
+
+.timeline ul {
+    padding: 0;
+    list-style: none;
+}
+
+.timeline ul li {
+    margin-bottom: 20px;
+}
+
+.timeline ul li h4 {
+    font-size: 1.2rem;
+    font-weight: bold;
+    font-family: 'Marhalika', sans-serif;
+    animation: fadeIn 2s ease-in-out;
+}
+
+.timeline ul li p {
+    margin: 0;
+    color: #555;
+}
+
+.values {
+    background-color: #354F52;
+}
+
+.values h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+
+/*Estilos de Proyectos*/
+.projects-section h1 {
+    margin-top: 60px;
+}
+
+.project-img {
+    width: 100%;
+    height: 300px;
+    max-width: 100%;
+    margin: 0 auto;
+    display: block;
+    object-fit: cover;
+}
+
+
+.projects-section .btn-primary,
+.modal-body a,
+.modal-footer button,
+#enviar,#leermas {
+    background-color: #354F52;
+    color: white;
+    border: none;
+    transition: transform 0.2s ease;
+    animation: fadeIn 2s ease-in-out;
+}
+
+.projects-section .btn-primary:hover,
+.modal-body a:hover,
+.modal-footer button:hover,
+#enviar:hover, #leermas:hover {
+    transform: scale(1) translateY(2px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    background-color: #354F52;
+}
+
+.projects-section .btn-primary:active,
+.modal-body a:active,
+.modal-footer button:active,
+#enviar:active, #leermas:active {
+    transform: scale(1) translateY(0);
+    background-color: #52796F;
+}
+
+.modal-content {
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+}
+
+.modal-title {
+    font-weight: bold;
+}
+
+.modal-body img {
+    border-radius: 10px;
+    margin-bottom: 15px;
+    width: 100%;
+    height: 350px;
+    max-width: 100%;
+    margin: 0 auto;
+    object-fit: cover;
+}
+
+
+/*Estilos de Hablidades*/
+.col-md-4,
+h2 {
+    animation: fadeIn 2s ease-in-out;
+}
+
+.navbar-brand {
+    font-weight: bold;
+}
+
+.skills-section {
+    padding: 60px 20px;
+    background-color: #ffffff;
+}
+
+.card {
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+
+}
+
+.card:hover {
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.progress-bar {
+    background-color: #639286;
+}
+
+
+/*Estilos de Contacto*/
+label, input, textarea, i{
+    animation: fadeIn 2s ease-in-out;
+}
+
+.contact-section {
+    padding: 60px 20px;
+    background-color: #ffffff;
+}
+.contact-section p {
+    font-size: 1.1rem;
+    color: #666;
+}
+
+#name:focus,
+#email:focus,
+#message:focus {
+    border-color: #84A98C;
+    box-shadow: 0 0 5px #84A98C;
+}
+
+.social-cards {
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+    gap: 20px;
+}
+
+.social-card {
+    border: 1px solid #ddd;
+    padding: 20px;
+    text-align: center;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.social-card:hover {
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.social-card i {
+    font-size: 2rem;
+    margin-bottom: 10px;
+    color: #859899;
+}
+
+#enlaces{
+    color: #859899;
+}
+
+
+/*Estilos de Blog*/
+.blog-section h1 {
+    font-size: 2.5rem;
+    color: #333;
+}
+
+.blog-section p {
+    color: #666;
+}
+
+.card-title {
+    font-size: 1.25rem;
+    font-weight: bold;
+}
+
+.card-text {
+    font-size: 1rem;
+    color: #555;
+}
+
+.card img {
+    height: 200px;
+    object-fit: cover;
+    border-bottom: 2px solid #859899;
+}
+
+.modal-body li{
+    animation: fadeIn 2s ease-in-out;
+}
+
+@media (max-width: 768px) {
+    /* Estilos para pantallas más pequeñas (tablet y móvil) */
+    #principal2{
+        display: none;
+    }
+}

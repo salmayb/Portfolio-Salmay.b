@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="miembros" content="Salma El Yaznasni">
+    <meta name="date" content="2025-01-24" scheme="YYYY-MM-DD">
+    <title>Salmay.b Portfolio- Home</title>
+    <link rel="icon" href="img/icono.png" type="image/x-icon">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- Capa para desenfoque -->
+    <div id="blur-layer"
+        style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.3); display: none; z-index: 1000; filter: blur(5px);">
+    </div>
+
+
+    <!-- Navbar -->
+    <nav role="navigation" class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">Salmay.b</a>
+            <button role="button" class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="html/sobremi.html">Sobre mí</a></li>
+                    <li class="nav-item"><a class="nav-link" href="html/portfolio.html">Proyectos</a></li>
+                    <li class="nav-item"><a class="nav-link" href="html/habilidades.html">Habilidades</a></li>
+                    <li class="nav-item"><a class="nav-link" href="html/contacto.html">Contacto</a></li>
+                    <li class="nav-item"><a class="nav-link" href="html/blog.html">Blog</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1>¡Hola! Soy Salma</h1>
+        <p>Desarrolladora web apasionada por crear experiencias digitales increíbles.</p>
+        <a href="html/portfolio.html" class="btn btn-primary btn-lg mt-3"
+        onclick="applyBlurAndRedirect('html/portfolio.html')">Explora mis proyectos</a><br>
+        <a href="docs/CV SALMA EL YAZNASNI .pdf" class="btn btn-primary btn-lg mt-3" download="Salma-El-Yaznasni-CV.pdf">
+        Echa un vistazo a mi CV </a>
+
+        
+    </section>
+
+    <!-- About Preview -->
+    <div class="container mt-5">
+        <div class="row align-items-center"> <!-- Clase para centrar verticalmente -->
+            <div class="col-lg-6">
+                <h2>Sobre mí</h2>
+                <p>Soy una desarrolladora web en formación, especializada en tecnologías frontend y backend. Me encanta
+                    resolver problemas y aprender nuevas herramientas para construir sitios web modernos y funcionales.
+                </p>
+                <a href="html/sobremi.html" class="btn btn-secondary mb-3" onclick="applyBlurAndRedirect('html/sobremi.html')"><b>Leer más</b></a>
+            </div>
+            <div class="col-lg-6 text-center"> <!-- Alineación centrada horizontalmente -->
+                <img src="img/yo5.jpeg" alt="Imagen de chica trabajando" class="img-fluid rounded mb-1">
+
+                <img src="img/foto.jpeg" alt="Imagen de ordenador con codigo de programacion" class="img-fluid rounded mb-1" id="principal2">
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white text-center py-3 mt-5">
+        <p>&copy; 2025 Mi Portfolio | Desarrollo web personalizado por Salma El Yaznasni</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        // Función para aplicar el desenfoque y redirigir después de un pequeño retraso
+        function applyBlurAndRedirect(url) {
+            // Mostrar la capa borrosa
+            document.getElementById("blur-layer").style.display = "block";
+    
+            // Desenfocar el contenido de la página
+            document.body.style.filter = "blur(5px)";
+            
+            // Redirigir después de 2 segundos (2000 ms)
+            setTimeout(function() {
+                window.location.href = url;
+            }, 700); // Ajusta el tiempo según lo necesites
+        }
+    
+        // Asignar la función de redirección a los botones
+        document.querySelectorAll('.btn').forEach(function(button) {
+            button.addEventListener('click', function(event) {
+                // Obtener el href del botón
+                var url = event.target.getAttribute('href');
+                // Llamar a la función para aplicar el desenfoque y redirigir
+                event.preventDefault(); // Prevenir la acción predeterminada del enlace
+                applyBlurAndRedirect(url);
+            });
+        });
+    </script>
+    
+</body>
+</html>
