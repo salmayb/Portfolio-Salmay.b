@@ -92,12 +92,10 @@
         }
     
         // Asignar la función de redirección a los botones
-        document.querySelectorAll('.btn').forEach(function(button) {
-            button.addEventListener('click', function(event) {
-                // Obtener el href del botón
-                var url = event.target.getAttribute('href');
-                // Llamar a la función para aplicar el desenfoque y redirigir
+        document.querySelectorAll('.btn').forEach(function (button) {
+            button.addEventListener('click', function (event) {
                 event.preventDefault(); // Prevenir la acción predeterminada del enlace
+                var url = event.currentTarget.getAttribute('href'); // <— aquí el cambio
                 applyBlurAndRedirect(url);
             });
         });
@@ -106,3 +104,4 @@
 </body>
 
 </html>
+
